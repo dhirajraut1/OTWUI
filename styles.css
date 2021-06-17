@@ -1,0 +1,114 @@
+/*colors
+blue == #3c99f5;
+yellow == #fcb501
+orangered == #fc3e29
+*/
+
+
+body {
+	display: block;
+	overflow-x: hidden;
+}
+
+
+/*for navbar*/
+/*nav {
+	background-color: ;
+}*/
+
+/*when logo is added*/
+/*.navbar-brand img {
+	max-height: 50px;
+}*/
+\
+
+/*.navbar-brand {
+	font-size: 24px !important;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: #3c99f5;
+}*/
+/*
+nav ul li a{
+	color: #a9a9a9 !important;
+	font-size: 18px;
+	margin: auto 10px;
+}
+*/
+/*nav ul li a:hover{
+	color: #fcb501 !important; 
+}
+*/
+
+/*for sections*/
+
+section{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+section h1{
+	text-transform: uppercase;
+	font-weight: 900;
+	color: #3c99f5;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+section p{
+	font-weight: 300;
+	font-size: 16px;
+}
+
+#hero button {
+	/*max-width: 50%;*/
+	/*height: auto;*/
+	border-radius: 50px !important;
+}
+
+/*#hero .col {
+
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+}
+
+#hero .img-col{
+	max-width: 130% !important;
+	width: 130%;
+}*/
+
+
+#hero{
+	height: 90vh;
+}
+
+#contact{
+	text-align: center;
+	background-color:#3c99f5;
+	color: whitesmoke;
+	margin-bottom: 50px;
+}
+
+#contact h1{
+	text-align: center;
+	color: whitesmoke;
+}
+
+#partner img{
+	filter: grayscale(100%);
+}
+
+#partner img:hover{
+	filter: none;
+}
+
+#testimonial h1{
+	text-align: center;
+	margin-bottom: 50px;	
+}
+#partner h1{
+	text-align: center;
+	margin-bottom: 50px;
+}
+

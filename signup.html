@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">  
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <title>OTW :: Sign Up</title>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background : #e6e6e6;
+  }
+  .row{
+    background: floralwhite;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px grey  ;
+
+  }
+  img{
+    /*border-bottom-left-radius: 30px;*/
+    border-radius: 30px;
+  }
+  .btn1{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    background-color: #fe4e59;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+  }
+  .btn1:hover{
+    background: floralwhite;
+    color: #fe4e59;
+    border: 2px solid;
+  }
+
+</style>
+
+  </head>
+  <body>
+  <!--   =============================================================================
+                                        Forms
+        ============================================================================= -->
+    <section class=" my-4 mx-4 Form">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-lg-5">
+            <img src="images/signup.png" class="img-fluid" alt="Signup Image">
+          </div>
+          <div class="col-lg-7 pt-5 px-5">
+            <form>
+              <h4>Sign Up for an Account</h4>
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="text" name="fullname" autocomplete="off" class="form-control my-3 p-2" placeholder="Full Name">
+              </div>
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="email" name="email" autocomplete="off" class="form-control my-3 p-2" placeholder="Email Address">
+                </div>
+                <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="text" name="username" autocomplete="off" class="form-control my-3 p-2" placeholder="Username">
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <input type="password" name="password" class="form-control my-3 p-2" placeholder="Password ">
+                  </div>
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="text" name="address" autocomplete="off" class="form-control my-3 p-2" placeholder="Contact Number">
+              </div>
+              </div>
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <button type="button" class="btn1 mt-3 mb-5">Sign Up</button>
+                </div>
+              </div>
+              <p>Already a Member? <a href="login.html" target="blank">Sign In</a></p>
+              <p>Return<a href="index.html" target="blank">Home</a></p>
+
+              <br>
+            </form>            
+          </div>
+        </div>
+    </section>
+  </body>
+</html>

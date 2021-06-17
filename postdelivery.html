@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <title>OTW :: Login</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">  
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background : #e6e6e6;
+  }
+  .row{
+    background: #94f3f7;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px grey ;
+
+  }
+  img{
+    /*border-bottom-left-radius: 30px;*/
+    border-radius: 30px;
+  }
+  .btn1{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    background-color: #ff6f5f;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+  }
+  .btn1:hover{
+    background: floralwhite;
+    color: #ff6f5f;
+    border: 2px solid;
+  }
+
+</style>
+  
+  </head>
+  <body>
+
+  <!--   =============================================================================
+                                        Delivery Post
+        ============================================================================= -->
+    <section class=" my-5 mx-5 Form">
+      <div class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-lg-5 my-auto">
+            <img src="images/img2.jpg" class="img-fluid" alt="Login-in Image">
+          </div>
+          <div class="col-lg-7 pt-5 px-5">
+            <form>
+              <!-- <h1>OTW</h1> -->
+              <h3>Post a Delivery</h3>
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="text" name="fname" autocomplete="off" class="form-control my-2 p-2" placeholder="Full Name">
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <input type="text" name="cname" class="form-control my-2 p-2" placeholder="Cell Number">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <input type="text" name="packagename" class="form-control my-2 p-2" placeholder="Package Name">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <input type="time" name="deliverytime" class="form-control my-2 p-2" placeholder="Delivery Time">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <input type="number" name="weight" class="form-control my-2 p-2" placeholder="Weight in KGs">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <input type="text" name="location" class="form-control my-2 p-2" placeholder="Receiver's Name">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <input type="text" name="receivername" class="form-control my-2 p-2" placeholder="Contact Number">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <textarea class="form-control" placeholder="Remarks"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-lg-7">
+                  <a href="index.html"><button type="button" class="btn1 mt-2 mb-5">Post Delivery</button></a>
+                </div>
+              </div>
+              <p>See Nearby Deliveries <a href="deliveries.html" target="blank">Here</a></p>
+              <p>Return<a href="index.html" target="blank">Home</a></p>
+              <br>
+            </form>            
+          </div>
+        </div>
+        
+      </div>
+      
+    </section>
+
+  </body>
+</html>
