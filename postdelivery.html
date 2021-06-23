@@ -3,12 +3,14 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <title>OTW :: Login</title>
+    <title>OTW:Post a Delivery </title>
     
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">  
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
@@ -46,7 +48,10 @@
     color: #ff6f5f;
     border: 2px solid;
   }
-
+  #dropmap{
+    height: 100%;
+    width: 100%;
+  }
 </style>
   
   </head>
@@ -55,17 +60,32 @@
   <!--   =============================================================================
                                         Delivery Post
         ============================================================================= -->
-    <section class=" my-5 mx-5 Form">
+    <section id="main" class=" my-5 mx-2 Form">
       <div class="container-fluid">
         <div class="row no-gutters">
           <div class="col-lg-5 my-auto">
             <img src="images/img2.jpg" class="img-fluid" alt="Login-in Image">
           </div>
-          <div class="col-lg-7 pt-5 px-5">
+          <div class="col-lg-7 pt-5 px-auto">
             <form>
               <!-- <h1>OTW</h1> -->
               <h3>Post a Delivery</h3>
-              <div class="form-row">
+              <fieldset class="form-group">
+                <legend col-form-label col-sm-2 pt-0>Owner's Details
+                </legend>
+                <div class="form-row">
+                <div class="col-lg-7">
+                  <input type="text" name="fname" autocomplete="off" class="form-control my-2 p-2" placeholder="Full Name">
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                  <input type="text" name="cname" class="form-control my-2 p-2" placeholder="Cell Number">
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <legend col-form-label col-sm-2 pt-0>Package Details</legend>
+                 <div class="form-row">
                 <div class="col-lg-7">
                   <input type="text" name="fname" autocomplete="off" class="form-control my-2 p-2" placeholder="Full Name">
                 </div>
@@ -81,6 +101,7 @@
                 </div>
                 <div class="form-row">
                   <div class="col-lg-7">
+                    <label>Delivery Time</label>
                   <input type="time" name="deliverytime" class="form-control my-2 p-2" placeholder="Delivery Time">
                   </div>
                 </div>
@@ -89,14 +110,57 @@
                   <input type="number" name="weight" class="form-control my-2 p-2" placeholder="Weight in KGs">
                   </div>
                 </div>
-                <div class="form-row">
+              </fieldset>
+
+              <!------------------------------ location selector------------------------- -->
+              
+              <fieldset class="form-group">
+                <legend col-form-label col-sm-2 pt-0>Location</legend>
+                  <div class="form-row">
+                  <div class="col-lg-7" id="postmap">
+                  </div>
+                </div>
+                <div id= "postmap" class="form-row">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                      Launch demo modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            This is modal
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <legend col-form-label col-sm-2 pt-0>Receiver's Detail</legend>
+                <div col-md-6>
+                  <div class="form-row">
                   <div class="col-lg-7">
-                  <input type="text" name="location" class="form-control my-2 p-2" placeholder="Receiver's Name">
+                  <input type="text" name="receivername" class="form-control my-2 p-2" placeholder="Receiver's Name">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="col-lg-7">
-                  <input type="text" name="receivername" class="form-control my-2 p-2" placeholder="Contact Number">
+                  <input type="text" name="receivercontact" class="form-control my-2 p-2" placeholder="Contact Number">
                   </div>
                 </div>
                 <div class="form-row">
@@ -110,16 +174,127 @@
                   <a href="index.html"><button type="button" class="btn1 mt-2 mb-5">Post Delivery</button></a>
                 </div>
               </div>
-              <p>See Nearby Deliveries <a href="deliveries.html" target="blank">Here</a></p>
-              <p>Return<a href="index.html" target="blank">Home</a></p>
+              </fieldset>
+              <p>See Nearby Deliveries <a href="deliveries.html"> Here</a></p>
+              <p>Return <a href="index.html">Home</a></p>
               <br>
-            </form>            
-          </div>
-        </div>
-        
+            </form> 
+          </div>       
       </div>
-      
     </section>
-
   </body>
+
+  <!-- leaflet js -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script>
+// ------------------------initialisations--------------------------------------
+  // map initialisation
+  var map = L.map('map').setView([27.7172, 85.3240], 13);//setView([57.74,11.94],13);//
+
+  // osm layer
+  var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }); 
+  osm.addTo(map);
+
+  // ----------------------various layers-------------------------------------
+
+  // satellite view layer
+  var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+
+  // Esri_WorldImagery.addTo(map); //can be activated after removing the comment
+
+  // googlemap hybrid
+
+  googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+  });
+  // googleHybrid.addTo(map); 
+
+// --------------------------markers--------------------------------------------
+
+  // custom marker icon
+  var myIcon = L.icon ({
+  iconUrl : '../images/receive.png',
+  iconSize :[50,50],
+  });
+
+  var pickupMarker = L.marker([27.7172, 85.3240],{draggable: true, icon : myIcon});//for custom icon, {icon:myIcon,});
+  var popup1 = pickupMarker.bindPopup("We'll Receive Package from Here."+ pickupMarker.getLatLng()).openPopup();
+  // popup1.addTo(map);
+
+  var dropoffMarker = L.marker([27.7172, 85.3240],{draggable: true});//for custom icon, {icon:myIcon,});
+  var popup2 = dropoffMarker.bindPopup("We'll Send Package Here."+dropoffMarker.getLatLng()).openPopup();
+  // popup2.addTo(map);
+
+  var longlat = pickupMarker.getLatLng();
+  console.log(longlat);
+  console.log(pickupMarker.toGeoJSON());
+
+  // ----------------------------layer controller------------------------------
+
+  var baseMaps = {
+    "Terrain":osm,
+    "Satellite":googleHybrid
+  };
+
+  var overlayMaps = {
+    "Pickup" : pickupMarker,
+    "Drop Off" : dropoffMarker
+  };
+
+  L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+
+
+
+// ------------------------leaflet Routing machine-------------------
+//  L.Routing.control({
+//    waypoints: [
+//     L.latLng(57.74, 11.94),
+//     L.latLng(57.6792, 11.949)
+//   ]
+// }).addTo(map);
+
+
+// -------------------------live tracking in leaflet ----------------------------
+
+  // var marker,circle;
+
+  // if(!navigator.geolocation){
+  //  console.log("Your browser doesn't support geolocation feature.")
+  // }else{
+  //  setInterval(()=>
+  //  {
+  //    navigator.geolocation.getCurrentPosition(getPosition)
+  //  },5000)
+    
+  // }
+
+  // function getPosition(position){
+  //  var lat = position.coords.latitude
+  //  var long = position.coords.longitude
+  //  var accuracy = position.coords.accuracy
+
+  //  if(marker){
+  //    map.removeLayer(marker)
+  //  }
+  //  if(circle){
+  //    map.removeLayer(circle)
+  //  }
+
+  //  var currentMarker = L.marker([lat,long])
+  //  var circle = L.circle([lat,long],{radius: accuracy})
+  //  var featureGroup = L.featureGroup([currentMarker,circle]).addTo(map)
+  //  map.fitBounds(featureGroup.getBounds())
+  //  console.log("Your location is: lat:"+lat+"Long:"+long+"Accuracy:"+accuracy)
+  // }
+
+  // --------------------- end of live tracking----------------------------- 
+
+</script>
 </html>
